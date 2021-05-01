@@ -1,0 +1,11 @@
+version: '2'
+services:
+  kreturn:
+    image: img-kreturn
+    ports:
+        - 127.0.0.1:9050:80
+    environment:
+      - VIRTUAL_HOST=return.svenleonhard.de
+      - VIRTUAL_PORT=9050
+      - LETSENCRYPT_HOST=return.svenleonhard.de
+      - LETSENCRYPT_EMAIL=*
