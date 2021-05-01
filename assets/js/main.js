@@ -64,11 +64,21 @@
 	$("#progress-label").text(getProgressLabel());
 	document.getElementById("progress").value = progress();
 	document.getElementById("progress").max = sumWeeks();
+	$("#weekends").text(getWeeks());
+	$("#working-days").text(getWorkingDays());
 
 })(jQuery);
 
 function getWeeks() {
 	return Math.round(Math.abs(targetReturn() - today()) * 0.00000000165);
+}
+
+function getDays() {
+	return Math.round(Math.abs(targetReturn() - today()) * 0.00000001157407);
+}
+
+function getWorkingDays() {
+	return getDays() - 2 * getWeeks();
 }
 
 function sumWeeks() {
